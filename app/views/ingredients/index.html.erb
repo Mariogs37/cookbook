@@ -1,0 +1,16 @@
+<ol>
+<% @ingredients.each do |ingredient| %>
+  <li>
+    <ul>
+      <li><%= link_to(ingredient.name, ingredient) %></li>
+        <li><%= ingredient.measurement %></li>
+        <li><%= ingredient.cost %></li>
+        <li><%= image_tag(ingredient.image) %></li>
+        <li><%= link_to('Delete Ingredient', @ingredient, :method => :delete, :confirm => 'Are you sure you want to delete this ingredient?') %></li>
+        <li><%= link_to('Edit Ingredient', edit_ingredient_path(ingredient)) %></li>
+        <br>
+
+      </ul>
+    </li>
+<% end %>
+</ol

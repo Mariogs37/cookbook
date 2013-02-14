@@ -1,0 +1,29 @@
+<div id="book_info">
+  <li><%= link_to(@book.title, @book) %></li>
+  <li><%= @book.cuisine %></li>
+  <li><%= @book.chef %></li>
+  <li><%= image_tag(@book.image) %></li>
+  <li><%= link_to('Delete Book', @book, :method => :delete, :confirm => 'Are you sure you want to delete this book?') %></li>
+</div>
+
+<br>
+
+<% @book.recipes.each do |recipe| %>
+  <div class="dish clearfix">
+    <div class="recipe">
+      <%= recipe.name %>
+      <%= image_tag(recipe.image) %>
+    </div>
+
+    <% recipe.ingredients.each do |ingredient| %>
+      <div class="ingredients">
+        <ul>
+        <li><%= ingredient.name %></li>
+        <li><%= image_tag(ingredient.image) %></li>
+        </ul>
+      </div>
+
+
+  <% end %>
+  </div>
+<% end %>

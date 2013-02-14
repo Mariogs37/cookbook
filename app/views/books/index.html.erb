@@ -1,0 +1,15 @@
+<ol>
+<% @books.each do |book| %>
+  <li>
+    <ul>
+      <li><%= link_to(book.title, book) %></li>
+        <li><%= book.cuisine %></li>
+        <li><%= book.chef %></li>
+        <li><%= image_tag(book.image) %></li>
+        <li><%= link_to('Delete Book', @book, :method => :delete, :confirm => 'Are you sure you want to delete this book?') %></li>
+        <li><%= link_to('Edit Book', edit_book_path(book)) %></li>
+
+      </ul>
+    </li>
+<% end %>
+</ol
